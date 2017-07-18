@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Django Reddit</title>
+  </head>
+  <body>
+
+    {% block header %}
+      <h1><a href="{% url 'home' %}">Django Reddit</a></h1>
+    {% endblock %}
+
+    {% block content %}
+      Toto je kontent
+    {% endblock %}
+  </body>
+</html>

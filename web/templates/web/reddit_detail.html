@@ -1,0 +1,10 @@
+{% extends "web/base.html" %}
+
+{% block content %}
+
+  {{ object }}
+  {% for article in object.article_set.all %}
+    <li>{{ article.url }}</li>
+  {% endfor %}
+
+{% endblock %}
