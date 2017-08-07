@@ -1,0 +1,13 @@
+{% extends "web/base.html" %}
+
+{% block content %}
+
+  <h2 class="subtitle">{{ object }}</h2>
+  {% for article in object.articles.all %}
+    <li>
+      <a href="{{ article.url }}" target="_blank">{{ article.url|truncatechars_html:35 }}</a>
+      - {{ article.description }}
+    </li>
+  {% endfor %}
+
+{% endblock %}

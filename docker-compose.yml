@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    ports:
+      - "49153:5432"
+    environment:
+      - POSTGRES_PASSWORD=pw
+    volumes:
+      - pgdjdata:/var/lib/postgresql/data/
+
+  web:
+    build: ./code/.
+    depends_on:
+      - postgres
+    command: python manage.py runserver 0.0.0.0:8000
+    entrypoint: /serve/app/docker-entrypoint.sh
+    ports:
+       - "8000:8000"
+    restart: always
+    volumes:
+      - .:/code/
+    links:
+      - postgres
+    volumes:
+      - ./code:/serve/app
+      - cachedata:/serve/cache
+      - mediadata:/serve/media
+      - staticdata:/serve/static
+    tty: true
+
+volumes:
+  pgdjdata:
+  cachedata:
+  mediadata:
+  staticdata:

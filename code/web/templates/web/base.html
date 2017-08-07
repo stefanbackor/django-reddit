@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Django Reddit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css">
+    <style media="screen">
+      body {
+        margin: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+
+    {% block header %}
+      <a href="{% url 'home' %}">
+        <h1 class="title">Django Reddit</h1>
+      </a>
+    {% endblock %}
+
+    <br><br>
+
+    {% block content %}
+      Toto je kontent
+    {% endblock %}
+  </body>
+</html>

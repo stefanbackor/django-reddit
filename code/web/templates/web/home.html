@@ -1,0 +1,13 @@
+{% extends "web/base.html" %}
+
+{% block content %}
+  {{ block.super }}
+
+  <ul>
+  {% for r in reddits %}
+    <li>
+      <a href="{% url 'reddit-detail' slug=r.slug %}">{{ r.name }} ({{ r.articles.count }})</a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endblock %}
