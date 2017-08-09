@@ -4,7 +4,7 @@ services:
   postgres:
     image: postgres
     ports:
-      - "49153:5432"
+      - "5433:5432"
     environment:
       - POSTGRES_PASSWORD=pw
     volumes:

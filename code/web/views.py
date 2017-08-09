@@ -1,5 +1,7 @@
 from django.shortcuts import render, render_to_response
-from django.views.generic import DetailView
+from django.views.generic import DetailView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from . import models
 
 
@@ -8,5 +10,11 @@ def home(request):
         'reddits': models.Reddit.objects.all()})
 
 
-class RedditDetail(DetailView):
+class WebViewMixin(object): # LoginRequiredMixin
     model = models.Reddit
+
+class RedditDetail(WebViewMixin, DetailView):
+    pass
+
+class RedditAdd(WebViewMixin, CreateView):
+    pass

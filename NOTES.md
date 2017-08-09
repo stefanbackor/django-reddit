@@ -6,6 +6,10 @@
 
 (python, multinheritance-mixins, introspection, everything is object, allows functional programming)
 
+## Big names
+Django: Instagram, Disqus, Bitbucket, Spotify and Pinterest
+Python: Youtube, Dropbox, Google search, Reddit
+
 ## Design principles - The Zen of Python
 - Explicit is better than implicit (No magic, unless it provides huge convenience)
 - Loose coupling (The various layers of the framework shouldn’t “know” about each other unless absolutely necessary.)
@@ -38,12 +42,6 @@ Tool that controls presentation and presentation-related logic
 - Just enough programming-esque functionality (written by designers, not programmers)
 - Safety and security - (out of the box, csrf)
 - Extensibility (custom template tags and filter)
-
-
-## Huge apps
-- Bitbucket (Django)
-
-
 
 
 ## App

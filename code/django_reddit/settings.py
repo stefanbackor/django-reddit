@@ -132,8 +132,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = '/serve/static'
 
 GRAPHENE = {
     'SCHEMA': 'django_reddit.schema.schema' # Where your Graphene schema lives
 }
+
+# REST settings
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        # 'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    )
+}
+
+# Debug toolbar settings
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK': "%s.show_toolbar" % __name__,
+}
+
+def show_toolbar(request):
+    return True

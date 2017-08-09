@@ -23,6 +23,9 @@ class Article(models.Model):
     class Meta:
         ordering = ['-created_at']
 
+    def __str__(self):
+        return self.url
+
 
 class Comment(models.Model):
     text = models.TextField()
