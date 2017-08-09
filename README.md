@@ -1,2 +1,2 @@
 # django-reddit
-Example app for brownbag purposes
+Brownbag example of REST and GraphQL API using Django framework.
